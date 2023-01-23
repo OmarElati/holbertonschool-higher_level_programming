@@ -12,4 +12,4 @@ if __name__ == "__main__":
     if num_args == 0:
         print(".")
     else:
-        print(":")
+        print("")
