@@ -2,6 +2,7 @@
 import importlib.util
 import os
 
+
 def print_variable_value(filepath, variable_name):
     # Get the module name from the filepath
     module_name = os.path.splitext(os.path.basename(filepath))[0]
@@ -14,6 +15,7 @@ def print_variable_value(filepath, variable_name):
     # Get the variable value
     variable_value = getattr(module, variable_name)
     print(variable_value)
+
 
 if __name__ == "__main__":
     filepath = "variable_load_5.py"
