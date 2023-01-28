@@ -2,6 +2,7 @@
 import importlib.util
 import os
 
+
 def print_module_names(filepath):
     # Get the module name from the filepath
     module_name = os.path.splitext(os.path.basename(filepath))[0]
@@ -17,6 +18,7 @@ def print_module_names(filepath):
     # Sort the names and print them
     for name in sorted(names):
         print(name)
+
 
 if __name__ == "__main__":
     filepath = "hidden_4.pyc"
