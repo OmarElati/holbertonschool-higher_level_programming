@@ -2,6 +2,8 @@
 """
 This is a class for representing a square.
 """
+
+
 class Square:
     """Defines a square with a private attribute 'size'
 
