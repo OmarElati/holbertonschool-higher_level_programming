@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-    This is a class for representing a square.
+This is a class for representing a square.
 
-    Attributes:
-        None
+Attributes:
+    None
 
-    Methods:
-        None
-    """
+Methods:
+    None
+"""
 
 
 class Square:
