@@ -11,4 +11,7 @@
 
 
 class Square:
+    """
+    This is a class
+    """
     pass
