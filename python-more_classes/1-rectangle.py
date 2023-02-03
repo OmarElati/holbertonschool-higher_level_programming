@@ -23,24 +23,28 @@ class Rectangle:
         return self.height
 
     @width.setter
-    def set_width(self, width):
+    def set_width(self, value):
         """.."""
-        if width is int :
-            if width < 0:
-                raise ValueError('width must be >= 0')
+        if isinstance( value, int) :
+
+            if value >= 0 :
+                self.__width = value
             else :
-                self.width = width
+                raise ValueError('width must be >= 0')
+            
         else :
             raise TypeError('width must be an integer')
 
     @height.setter
-    def set_height(self, height):
+    def set_height(self, value):
         """.."""
-        if height is int :
-            if height < 0:
-                raise ValueError('height must be >= 0')
+        if isinstance( value, int) :
+
+            if value >= 0 :
+                self.__width = value
             else :
-                self.height = height
+                raise ValueError('height must be >= 0')
+            
         else :
             raise TypeError('height must be an integer')
 
