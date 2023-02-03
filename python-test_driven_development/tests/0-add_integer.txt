@@ -24,3 +24,6 @@ try:
     add_integer([1, 2], [3, 4])
 except Exception as e:
     print(e, end=", ")  # Expected Output: a must be an integer
+
+# Test case 7: Integer casting
+print(add_integer(1.9, 2.2), end=", ")  # Expected Output: 4
