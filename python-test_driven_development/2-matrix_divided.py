@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-This module contains the matrix_divided function
+    matrix_divided function
 """
 
 
 def matrix_divided(matrix, div):
     """
-    Divides all elements of a matrix. Returns a
-    new matrix (list of list). The result is
-    rounded to 2 decimal places.
+    Divides all elements of a matrix.
+    Returns a new matrix (list of list).
+    The result is rounded to 2 decimal places.
     """
     if not isinstance(matrix, list) or len(matrix) == 0 or not matrix[0]:
         raise TypeError("matrix must be a matrix (list of lists) " +
