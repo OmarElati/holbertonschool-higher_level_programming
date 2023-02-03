@@ -1,0 +1,31 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> len(__import__("5-text_indentation").__doc__) > 0
+True
+
+>>> len(__import__("5-text_indentation").text_indentation.__doc__) > 0
+True
+
+>>> text_indentation("Holberton School. Is a software development school: Would you like to attend? It is in San Francisco")
+Holberton School.
+<BLANKLINE>
+Is a software development school:
+<BLANKLINE>
+Would you like to attend?
+<BLANKLINE>
+It is in San Francisco
+
+>>> text_indentation(36)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
