@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+    Since the beginning you have been creating “Interactive tests”.
+    For this exercise, you will add Unittests.
+"""
 import unittest
 
 def max_integer(list=[]):
@@ -27,6 +32,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_list_of_mixed_integers(self):
         self.assertEqual(max_integer([1, -2, 3, -4, 5]), 5)
         self.assertEqual(max_integer([-5, 4, -3, 2, -1]), 4)
+
+    def test_max_at_end(self):
+        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
 
 if __name__ == '__main__':
     unittest.main()
