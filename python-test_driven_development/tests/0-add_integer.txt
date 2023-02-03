@@ -1,29 +1,29 @@
-# Test case 1: Normal Inputs
+# Test case 1: Regular addition
 print(add_integer(1, 2), end=", ")  # Expected Output: 3
 
-# Test case 2: Floating Point Inputs
-print(add_integer(1.1, 2.2), end=", ")  # Expected Output: 3
+# Test case 2: Integer casting
+print(add_integer(1.9, 2.2), end=", ")  # Expected Output: 4
 
-# Test case 3: Single Input with default value
-print(add_integer(1), end=", ")  # Expected Output: 99
-
-# Test case 4: Inputs as string
+# Test case 3: Check type
 try:
     add_integer("1", "2")
 except Exception as e:
     print(e, end=", ")  # Expected Output: a must be an integer
 
-# Test case 5: Inputs as None
+# Test case 4: Float overflow
 try:
-    add_integer(None, None)
+    add_integer(float('inf'), float('inf'))
 except Exception as e:
-    print(e, end=", ")  # Expected Output: a must be an integer
+    print(e, end=", ")  # Expected Output: float overflow
 
-# Test case 6: Inputs as List
+# Test case 5: Cannot convert float NaN to integer
 try:
-    add_integer([1, 2], [3, 4])
+    add_integer(float('nan'), float('nan'))
 except Exception as e:
-    print(e, end=", ")  # Expected Output: a must be an integer
+    print(e, end=", ")  # Expected Output: cannot convert float NaN to integer
 
-# Test case 7: Integer casting
-print(add_integer(1.9, 2.2), end=", ")  # Expected Output: 4
+# Test case 6: Missing one argument
+print(add_integer(1), end=", ")  # Expected Output: 99
+
+# Test case 7: Missing two arguments
+print(add_integer(), end=", ")  # Expected Output: 98
