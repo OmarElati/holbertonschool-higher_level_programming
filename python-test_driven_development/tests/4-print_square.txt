@@ -22,6 +22,7 @@ TypeError: size must be an integer
 ###
 ###
 ###
+###
 
 >>> print_square(5)
 #####
