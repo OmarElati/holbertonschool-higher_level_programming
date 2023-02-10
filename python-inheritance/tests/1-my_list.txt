@@ -1,0 +1,78 @@
+First import ``MyList`` from the ``MyList`` module:
+        >>> MyList = __import__('1-my_list').MyList
+
+Now :
+
+        >>> my_list = MyList([1, 2, 4, 3, 5])
+        >>> print(my_list)
+        [1, 2, 4, 3, 5]
+        >>> my_list.append(6)
+        >>> my_list.print_sorted()
+        [1, 2, 3, 4, 5, 6]
+        >>> print(my_list)
+        [1, 2, 4, 3, 5, 6]
+
+        >>> my_list = MyList()
+        >>> type(my_list)
+        <class '1-my_list.MyList'>
+
+        >>> issubclass(MyList, list)
+        True
+        >>> 'print_sorted' in dir(MyList)
+        True
+
+        >>> my_list = MyList([4, 2, 3, 1, 5])
+        >>> print(my_list)
+        [4, 2, 3, 1, 5]
+
+        >>> my_list = MyList([4, 2, 3, 1, 5])
+        >>> my_list.print_sorted()
+        [1, 2, 3, 4, 5]
+
+        >>> my_list = MyList([-4, 2, 3, 1, 5])
+        >>> my_list.print_sorted()
+        [-4, 1, 2, 3, 5]
+
+        >>> my_list = MyList([1, 2, 3, 4, 5])
+        >>> my_list.print_sorted()
+        [1, 2, 3, 4, 5]
+
+        >>> my_list = MyList([1])
+        >>> my_list.print_sorted()
+        [1]
+
+        >>> my_list = MyList()
+        >>> my_list.print_sorted()
+        []
+
+        >>> my_list = MyList([])
+        >>> my_list.print_sorted()
+        []
+
+        >>> my_list = MyList(["c", "d", "a", "e", "b"])
+        >>> my_list.print_sorted()
+        ['a', 'b', 'c', 'd', 'e']
+
+        >>> my_list = MyList([1.1, 3.3, 4.4, 2.2, 5.5])
+        >>> my_list.print_sorted()
+        [1.1, 2.2, 3.3, 4.4, 5.5]
+
+        >>> my_list = MyList([-1, -3, -4, -2, -5])
+        >>> my_list.print_sorted()
+        [-5, -4, -3, -2, -1]
+
+        >> my_list = MyList(1)
+        Traceback (most recent call last):
+        ...
+        TypeError: 'int' object is not iterable
+
+        >>> my_list = MyList([1, "a"])
+        >>> my_list.print_sorted()
+        Traceback (most recent call last):
+        ...
+        TypeError: unorderable types: str() < int()
+
+        >>> my_list.print_sorted([3, 1, 2])
+        Traceback (most recent call last):
+        ...
+        TypeError: print_sorted() takes 1 positional argument but 2 were given
