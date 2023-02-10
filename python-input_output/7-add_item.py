@@ -13,6 +13,7 @@ def save_to_json_file(my_obj, filename):
     with open(filename, 'w') as file:
         json.dump(my_obj, file)
 
+
 def load_from_json_file(filename):
     """ Load an object from a file in JSON format """
     try:
@@ -20,6 +21,7 @@ def load_from_json_file(filename):
             return json.load(file)
     except:
         return []
+
 
 def add_items(filename, items):
     """ Add items to a list and save the list to a file in JSON format """
