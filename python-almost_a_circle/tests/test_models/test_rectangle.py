@@ -65,11 +65,11 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 2, 3, -4)
 
     def test_rectangle_display(self):
-        r = Rectangle(2, 2)
+        r = Rectangle(4, 3)
         output = StringIO()
         with contextlib.redirect_stdout(output):
             r.display()
-        self.assertEqual(output.getvalue(), "##\n##\n")
+        self.assertEqual(output.getvalue(), "####\n####\n####\n")
 
     def test_rectangle_str(self):
         """Test __str__ method of the Rectangle"""
