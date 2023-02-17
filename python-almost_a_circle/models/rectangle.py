@@ -83,7 +83,7 @@ class Rectangle(Base):
     def display(self):
         """
         prints in stdout the Rectangle instance with the
-        character # - you don’t need to handle x and y here 
+        character # - you don’t need to handle x and y here
         """
         for i in range(self.y):
             print()
