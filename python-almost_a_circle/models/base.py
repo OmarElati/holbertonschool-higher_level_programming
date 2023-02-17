@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This module provides the Base class, which is the foundation for all other classes in this project. The Base class manages the ID attribute for all future classes and prevents duplication of code.
+This module provides the Base class, which is the foundation
+for all other classes in this project. The Base class manages
+the ID attribute for all future classes and prevents duplication of code.
 """
 
 
