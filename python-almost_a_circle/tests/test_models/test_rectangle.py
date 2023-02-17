@@ -44,6 +44,11 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle("1", 2)
 
+    def test_rectangle_with_non_integer_width(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle("1", 2)
+
+
 
     def test_rectangle_display(self):
         """Test display method of the Rectangle"""
