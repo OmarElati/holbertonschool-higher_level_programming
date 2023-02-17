@@ -5,6 +5,8 @@ from models.rectangle import Rectangle
 from unittest.mock import patch
 from models.base import Base
 from models.square import Square
+from io import StringIO
+import contextlib
 import io
 
 class TestRectangle(unittest.TestCase):
@@ -56,14 +58,18 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(0, 2)
         with self.assertRaises(ValueError):
+            r = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
             r = Rectangle(1, 2, -3)
         with self.assertRaises(ValueError):
             r = Rectangle(1, 2, 3, -4)
 
     def test_rectangle_display(self):
-        """Test display method of the Rectangle"""
-        r1 = Rectangle(3, 2)
-        self.assertEqual(r1.display(), print("###\n###\n"))
+        r = Rectangle(2, 2)
+        output = StringIO()
+        with contextlib.redirect_stdout(output):
+            r.display()
+        self.assertEqual(output.getvalue(), "##\n##\n")
 
     def test_rectangle_str(self):
         """Test __str__ method of the Rectangle"""
