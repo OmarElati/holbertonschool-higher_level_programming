@@ -40,14 +40,6 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.area(), 20)
 
-    def test_rectangle_init_string(self):
-        with self.assertRaises(TypeError):
-            r = Rectangle("1", 2)
-
-    def test_rect_str_arg(self):
-        with self.assertRaises(TypeError):
-            r = Rectangle(1, "2")
-
     def test_rectangle_with_invalid_types(self):
         with self.assertRaises(TypeError):
             r = Rectangle("1", 2)
@@ -57,6 +49,16 @@ class TestRectangle(unittest.TestCase):
             r = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
             r = Rectangle(1, 2, 3, "4")
+        with self.assertRaises(ValueError):
+            r = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r = Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            r = Rectangle(1, 2, 3, -4)
 
     def test_rectangle_display(self):
         """Test display method of the Rectangle"""
