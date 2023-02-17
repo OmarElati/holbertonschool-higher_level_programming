@@ -40,6 +40,11 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.area(), 20)
 
+    def test_rectangle_init_string(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle("1", 2)
+
+
     def test_rectangle_display(self):
         """Test display method of the Rectangle"""
         r1 = Rectangle(3, 2)
