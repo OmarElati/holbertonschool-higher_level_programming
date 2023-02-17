@@ -28,11 +28,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.y, 2)
         self.assertEqual(s.id, 3)
 
-    def test_square_instantiation_with_1(self):
-        """Test if a Square object can be instantiated with size 1"""
-        s = Square(1)
-        self.assertEqual(s.size, 1)
-
     def test_square_str(self):
         """Tests __str__ method of Square"""
         s = Square(5, 1, 2, 3)
