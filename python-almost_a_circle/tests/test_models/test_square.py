@@ -28,6 +28,14 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.y, 2)
         self.assertEqual(s.id, 3)
 
+    def test_square_with_argument_one(self):
+        """Tests creating a Square with argument 1"""
+        s = Square(1)
+        self.assertEqual(s.size, 1)
+        self.assertEqual(s.x, 0)
+        self.assertEqual(s.y, 0)
+        self.assertIsNotNone(s.id)
+
     def test_square_str(self):
         """Tests __str__ method of Square"""
         s = Square(5, 1, 2, 3)
