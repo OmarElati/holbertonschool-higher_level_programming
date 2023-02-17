@@ -48,6 +48,15 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r = Rectangle(1, "2")
 
+    def test_rectangle_with_invalid_types(self):
+        with self.assertRaises(TypeError):
+            r = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            r = Rectangle(1, 2, 3, "4")
 
     def test_rectangle_display(self):
         """Test display method of the Rectangle"""
