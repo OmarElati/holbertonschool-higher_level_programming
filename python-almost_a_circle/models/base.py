@@ -11,9 +11,7 @@ import json
 class Base:
     """ Base class for classes """
 
-
     __nb_objects = 0
-
 
     def __init__(self, id=None):
         """ Initialize the class """
@@ -49,7 +47,10 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON string representation of a list of objects to a file."""
+        """
+            Write the JSON string representation
+            of a list of objects to a file
+        """
         if list_objs is None:
             list_objs = []
         filename = cls.__name__ + ".json"
@@ -58,7 +59,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of instances from a file containing a JSON string representation."""
+        """
+            Return a list of instances from a file
+            containing a JSON string representation
+        """
         filename = cls.__name__ + ".json"
         try:
             with open(filename, mode="r", encoding="utf-8") as f:
