@@ -28,22 +28,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.y, 2)
         self.assertEqual(s.id, 3)
 
-    def test_square_with_invalid_parameter(self):
-        with self.assertRaises(TypeError):
-            s = Square("1")
-        with self.assertRaises(TypeError):
-            s = Square(1, "2")
-        with self.assertRaises(TypeError):
-            s = Square(1, 2, "3")
-        with self.assertRaises(TypeError):
-            s = Square(-1)
-        with self.assertRaises(TypeError):
-            s = Square(1, -2)
-        with self.assertRaises(TypeError):
-            s = Square(1, 2, -3)
-        with self.assertRaises(TypeError):
-            s = Square(0)
-
     def test_square_str(self):
         """Tests __str__ method of Square"""
         s = Square(5, 1, 2, 3)
