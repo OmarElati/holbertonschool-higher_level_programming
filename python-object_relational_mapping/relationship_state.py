@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 """
-Defines the State class
+This module defines the State class which represents a state in a MySQL database. It inherits from SQLAlchemy Base and links to the MySQL table states. It also represents a relationship with the class City.
+
+Classes:
+
+    State: Represents a state in a MySQL database.
+        Attributes:
+            __tablename__ (str): The name of the MySQL table to store States.
+            id (sqlalchemy.Integer): The state's id.
+            name (sqlalchemy.String): The state's name.
+            cities (sqlalchemy.orm.relationship): The State-City relationship.
+            If the State object is deleted, all linked City objects will be automatically deleted. Also, the reference from a City object to its State will be named state.
 """
 
 from sqlalchemy import Column, Integer, String
