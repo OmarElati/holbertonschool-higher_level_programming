@@ -23,6 +23,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all cities sorted by id and print results
-    for city, state in session.query(City, State).filter(City.state_id == State.id).order_by(City.id):
+    # Query all the cities and states from the database
+    query = session.query(City, State).filter(City.state_id == State.id)\
+        .order_by(City.id)
+
+    # Print the query results
+    for city, state in query:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
