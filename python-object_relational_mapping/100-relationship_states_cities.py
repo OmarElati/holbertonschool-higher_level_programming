@@ -1,45 +1,31 @@
 #!/usr/bin/python3
 """
-Adds the State California with the City San Francisco to the database hbtn_0e_100_usa.
+This script creates the State “California” with the City “San Francisco” from the database hbtn_0e_100_usa.
+
+Usage: ./100-relationship_states_cities.py <mysql username> <mysql password> <database name>
+
+The script connects to a MySQL server running on localhost at port 3306 and uses the SQLAlchemy module for the database operations.
+
 """
 
+# import necessary modules
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import State
 from relationship_city import City
-from model_state import Base
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        db_name = sys.argv[3]
+    # create engine and session
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-        # set up engine
-        engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                               .format(username, password, db_name),
-                               pool_pre_ping=True)
-
-        # create all tables in the database
-        Base.metadata.create_all(engine)
-
-        # create a new session
-        Session = sessionmaker(bind=engine)
-        session = Session()
-
-        # create California and San Francisco
-        ca = State(name="California")
-        sf = City(name="San Francisco")
-        ca.cities.append(sf)
-
-        # add California and San Francisco to the session
-        session.add_all([ca, sf])
-
-        # commit the session to the database
-        session.commit()
-
-        # close the session
-        session.close()
-    else:
-        print("Usage: {} <username> <password> <database name>".format(sys.argv[0]))
+    # create new State and City objects and add them to session
+    new_state = State(name="California")
+    new_city = City(name="San Francisco", state=new_state)
+    session.add(new_state)
+    session.add(new_city)
+    session.commit()
