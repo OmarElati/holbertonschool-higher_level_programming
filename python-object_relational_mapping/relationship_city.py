@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines the City class.
+City class:
+    Represents a city with a name attribute.
 """
 
 
