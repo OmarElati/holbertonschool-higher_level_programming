@@ -14,13 +14,15 @@ if __name__ == '__main__':
     state_name = sys.argv[4]
 
     # Open database connection
-    db = MySQLdb.connect(user=mysql_username, passwd=mysql_password, db=db_name, port=3306, host='localhost')
+    db = MySQLdb.connect(user=mysql_username, passwd=mysql_password,
+                        db=db_name, port=3306, host='localhost')
 
     # Prepare a cursor object using cursor() method
     cursor = db.cursor()
 
     # Execute SQL query
-    query = "SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name=%s ORDER BY cities.id ASC"
+    query = "SELECT cities.name FROM cities JOIN states ON\
+    cities.state_id = states.id WHERE states.name=%s ORDER BY cities.id ASC"
     cursor.execute(query, (state_name,))
 
     # Fetch all rows and print them separated by commas
