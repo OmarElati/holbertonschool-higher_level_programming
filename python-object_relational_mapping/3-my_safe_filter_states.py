@@ -20,7 +20,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query using the execute() method
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (argv[4],))
+    cursor.execute("SELECT * FROM states WHERE\
+                   name = %s ORDER BY id ASC", (argv[4],))
 
     # Fetch all the rows using fetchall() method
     rows = cursor.fetchall()
