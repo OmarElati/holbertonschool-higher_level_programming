@@ -3,7 +3,10 @@
 
 
 from sqlalchemy import Column, Integer, String
-from relationship_city import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+
+Base = declarative_base()
 
 
 class State(Base):
