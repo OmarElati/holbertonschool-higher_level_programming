@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""Defines the City class with a relationship to the State class
-    using SQLAlchemy"""
+"""
+    Defines the City class with a relationship
+    to the State class using SQLAlchemy
+"""
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base, State
 
