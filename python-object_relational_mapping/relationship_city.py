@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 """
-This module defines a City model that represents a city for a MySQL database. The City model inherits from SQLAlchemy's Base class and is linked to the MySQL table 'cities'.
+This module defines a City model that represents a city
+for a MySQL database. The City model inherits from SQLAlchemy's
+Base class and is linked to the MySQL table 'cities'.
 
 Attributes:
     __tablename__ (str): The name of the MySQL table used for this model.
@@ -15,6 +17,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 # create a declarative base instance
 Base = declarative_base()
+
 
 class City(Base):
     """
