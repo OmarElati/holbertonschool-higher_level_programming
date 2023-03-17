@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Adds the State California with the City San Francisco to the database hbtn_0e_100_usa.
+This script adds the State California with the City San Francisco to the database hbtn_0e_100_usa.
 """
 
 import sys
@@ -12,6 +12,7 @@ from model_state import Base
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
+        # get username, password, and db_name from command line arguments
         username = sys.argv[1]
         password = sys.argv[2]
         db_name = sys.argv[3]
@@ -42,4 +43,5 @@ if __name__ == "__main__":
         # close the session
         session.close()
     else:
+        # print usage instructions if the script is not given the correct arguments
         print("Usage: {} <username> <password> <database name>".format(sys.argv[0]))
