@@ -1,20 +1,25 @@
 #!/usr/bin/python3
-"""class"""
-
-
+''' Defined State class which inherits from Base class '''
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
+# using declarative_base func to return a new base class, mapped class State
+# will inherit from Base and generate new Table and mapper()
+# declare new mapping
 Base = declarative_base()
 
-class State(Base):
-    """state class"""
-    __tablename__ = 'states'
-    id = Column(Integer, unique=True, primary_key=True)
-    name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="state")
 
-    def __init__(self, name):
-        self.name = name
-        self.cities = []
+# map class to inherit from Base
+class State(Base):
+    """mapped class definition"""
+
+    # 3 important: Table, mapper(), class objects
+
+    # Table
+    __tablename__ = 'states'
+
+    # Describe table, column objects, use methods imported from sqlalchemy
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)
+    cities = relationship("City", cascade="all")
