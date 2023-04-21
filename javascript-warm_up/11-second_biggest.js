@@ -1,3 +1,4 @@
+#!/usr/bin/node
 const args = process.argv.slice(2);
 const arr = args.map(arg => parseInt(arg));
 
