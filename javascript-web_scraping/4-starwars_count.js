@@ -11,8 +11,8 @@ request(args[0], (error, response) => {
     for (const i in results) {
       const characters = results[i].characters;
       for (const i in characters) {
-        if (characters[i].includes('18')) { 
-          count += 1; 
+        if (characters[i].includes('18')) {
+          count += 1;
         }
       }
     }
