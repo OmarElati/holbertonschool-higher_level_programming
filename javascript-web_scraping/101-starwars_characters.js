@@ -11,7 +11,7 @@ request(url, (error, response, body) => {
   const characters = JSON.parse(body).characters;
   const charactersCount = characters.length;
   let charactersLoaded = 0;
-  let characterNames = new Array(charactersCount);
+  const characterNames = new Array(charactersCount);
   characters.forEach(function (characterUrl, index) {
     request(characterUrl, function (error, response, body) {
       if (error) {
