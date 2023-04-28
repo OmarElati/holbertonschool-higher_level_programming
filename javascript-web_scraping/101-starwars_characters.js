@@ -11,17 +11,21 @@ request(url, (error, response, body) => {
   const characters = JSON.parse(body).characters;
   const charactersCount = characters.length;
   let charactersLoaded = 0;
-  characters.forEach(function (characterUrl) {
+  let characterNames = new Array(charactersCount);
+  characters.forEach(function (characterUrl, index) {
     request(characterUrl, function (error, response, body) {
       if (error) {
         console.error(error);
         return;
       }
-      const characterName = JSON.parse(body).name;
-      console.log(characterName);
+
+      characterNames[index] = JSON.parse(body).name;
+
       charactersLoaded++;
       if (charactersLoaded === charactersCount) {
-        // All characters loaded
+        characterNames.forEach(function (name) {
+          console.log(name);
+        });
       }
     });
   });
