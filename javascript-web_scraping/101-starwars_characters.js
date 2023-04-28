@@ -17,12 +17,11 @@ request(url, (error, response, body) => {
         console.error(error);
         return;
       }
-
-      console.log(JSON.parse(body).name);
-
+      const characterName = JSON.parse(body).name;
+      console.log(characterName);
       charactersLoaded++;
       if (charactersLoaded === charactersCount) {
-        return;
+        // All characters loaded
       }
     });
   });
