@@ -15,7 +15,7 @@ request(url, (error, response, body) => {
     request(characterUrl, function (error, response, body) {
       if (error) {
         console.error(error);
-        console.log();
+        return;
       }
 
       console.log(JSON.parse(body).name);
