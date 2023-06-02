@@ -1,8 +1,3 @@
 #!/bin/bash
-
-url=$1
-
 # Send a GET request to the URL and store the response in a variable
-response=$(curl -s -w "%{size_download}" -o /dev/null "$url")
-
-echo "$response"
+curl -sI $1 | grep "Content-Length" | cut -d " " -f2
