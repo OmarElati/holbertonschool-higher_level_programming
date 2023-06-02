@@ -11,4 +11,3 @@ echo "POST params:"
 echo "    email: $email"
 echo "    subject: $subject"
 echo "$response"
-
