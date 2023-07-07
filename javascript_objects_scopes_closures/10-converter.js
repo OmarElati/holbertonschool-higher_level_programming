@@ -1,16 +1,10 @@
 #!/usr/bin/node
 exports.converter = function (base) {
   return function (number) {
-    if (number === 0) {
-      return '0';
+    if (number < base) {
+      return number.toString();
     } else {
-      let result = '';
-      while (number > 0) {
-        const digit = number % base;
-        result = (digit < 10 ? digit : String.fromCharCode(55 + digit)) + result;
-        number = Math.floor(number / base);
-      }
-      return result;
+      return exports.converter(base)(Math.floor(number / base)) + (number % base < 10 ? (number % base).toString() : String.fromCharCode(55 + (number % base)));
     }
   };
 };
